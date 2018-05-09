@@ -1,0 +1,14 @@
+version: "2"
+services:
+  api:
+    build: .
+    environment:
+      - RAILS_ENV = development
+    volumes:
+      - .:/opt/ssh-bridge
+    ports:
+      - 127.0.0.1:3000:3000
+
+  # use nginx as reverse proxy for client ssl verify
+  #nginx:
+  #  image: nginx
